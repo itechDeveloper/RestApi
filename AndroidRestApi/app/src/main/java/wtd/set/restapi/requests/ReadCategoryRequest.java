@@ -11,14 +11,14 @@ import wtd.set.restapi.helpers.AppHelper;
 import wtd.set.restapi.helpers.logHelper;
 import wtd.set.restapi.models.ResponseModel;
 
-public class ReadRequest implements Runnable {
+public class ReadCategoryRequest implements Runnable {
 
     @Override
     public void run() {
         try {
             StringRequest jsonForPostRequest = new StringRequest(
                     Request.Method.GET,
-                    Constants.READ_ALL_DATA_URL,
+                    Constants.READ_CATEGORY_URL,
                     response -> {
                         if (response != null) {
                             logHelper.logInfo("data returned: " + response);

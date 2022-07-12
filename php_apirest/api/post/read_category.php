@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *'); // completely public. anyone can reach
 header('Content-Type: application/json');
 
 include_once '../../config/Database.php';
-include_once '../../models/Post.php';
+include_once '../../models/Category.php';
 
 // Instantiate Database & Connect
 $database = new Database();

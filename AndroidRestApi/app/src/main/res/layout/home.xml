@@ -30,6 +30,12 @@
                 android:text="@string/read_single"
                 android:onClick="runReadSingleRequest"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/read_category"
+                android:onClick="runReadCategoryRequest"/>
+
         </LinearLayout>
 
         <EditText

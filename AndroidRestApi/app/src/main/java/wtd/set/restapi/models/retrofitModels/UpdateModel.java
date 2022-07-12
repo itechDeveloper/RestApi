@@ -1,4 +1,4 @@
-package wtd.set.restapi.models;
+package wtd.set.restapi.models.retrofitModels;
 
 import com.google.gson.annotations.SerializedName;
 

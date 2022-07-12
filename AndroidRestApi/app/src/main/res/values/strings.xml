@@ -5,4 +5,5 @@
     <string name="post">POST</string>
     <string name="update">UPDATE</string>
     <string name="delete">DELETE</string>
+    <string name="read_category">READ CATEGORY</string>
 </resources>

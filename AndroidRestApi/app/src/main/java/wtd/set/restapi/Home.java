@@ -7,16 +7,19 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.HashMap;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import wtd.set.restapi.api.ApiInterface;
 import wtd.set.restapi.helpers.logHelper;
-import wtd.set.restapi.models.DeleteModel;
-import wtd.set.restapi.models.PostModel;
-import wtd.set.restapi.models.UpdateModel;
+import wtd.set.restapi.models.retrofitModels.DeleteModel;
+import wtd.set.restapi.models.retrofitModels.GetModel;
+import wtd.set.restapi.models.retrofitModels.PostModel;
+import wtd.set.restapi.models.retrofitModels.UpdateModel;
+import wtd.set.restapi.requests.ReadCategoryRequest;
 import wtd.set.restapi.requests.ReadRequest;
 import wtd.set.restapi.requests.ReadSingleRequest;
 import wtd.set.restapi.retrofit.RetrofitClient;
@@ -68,6 +71,11 @@ public class Home extends AppCompatActivity {
         }
 
         // TODO: Check if id is valid & exist in DB
+    }
+
+    public void runReadCategoryRequest(View view){
+        logHelper.logInfo("Read category request function is called.");
+        new ReadCategoryRequest().run();
     }
 
     public void runCreateRequest(View view) {
@@ -128,33 +136,5 @@ public class Home extends AppCompatActivity {
                 logHelper.logError("error: " +  t);
             }
         });
-    }
-
-    void setParams(){
-        if(editText_id.getText() != null){
-
-            if (Constants.params == null){
-                Constants.params = new HashMap<>();
-            }
-
-            try {
-                Constants.params.put("id", String.valueOf(editText_id.getText()));
-            }catch (Exception exception){
-                logHelper.logError("error: " + exception.getMessage());
-                return;
-            }
-
-            if (editText_info.getText() == null){
-                Constants.params.put("info", "no info is set");
-            }else {
-                Constants.params.put("info", String.valueOf(editText_info.getText()));
-            }
-
-            editText_id.setText("");
-            editText_info.setText("");
-        }else{
-            logHelper.toast(this, "id cannot be null");
-            logHelper.logError("error: null id");
-        }
     }
 }

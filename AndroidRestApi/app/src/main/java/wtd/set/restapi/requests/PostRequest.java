@@ -30,7 +30,7 @@ public class PostRequest implements Runnable {
 
             @Override
             protected Map<String, String> getParams() {
-                return Constants.params;
+                return null;
             }
 
             @Override
