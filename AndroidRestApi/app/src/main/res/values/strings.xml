@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RestApi</string>
+    <string name="read">READ</string>
+    <string name="read_single">READ SINGLE</string>
+    <string name="post">POST</string>
+    <string name="update">UPDATE</string>
+    <string name="delete">DELETE</string>
+</resources>
